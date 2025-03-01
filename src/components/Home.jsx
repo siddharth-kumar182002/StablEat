@@ -73,20 +73,20 @@ export const Home = () => {
       },
     // Add other items with similar structure
   ];
-
-  return (
-    <div className="p-4 md:p-8">
-      <h1 className="text-3xl font-bold mb-8">Today's Specials</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {foodItems.map((item) => (
-          <FoodCard
-            key={item.id}
-            item={item}
-            image={item.foodImage}
-            onAddToCart={() => addToCart(item)}
-          />
-        ))}
+  
+    return (
+      <div className="p-4 md:p-8 dark:bg-gray-900">
+        <h1 className="text-3xl font-bold mb-8 dark:text-white">Today's Specials</h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {foodItems.map((item) => (
+            <FoodCard
+              key={item.id}
+              item={item}
+              image={item.foodImage}
+              onAddToCart={() => addToCart(item)}
+            />
+          ))}
+        </div>
       </div>
-    </div>
-  );
+    );
 };

@@ -33,6 +33,7 @@ export const CartProvider = ({ children }) => {
   };
 
   const updateDistance = (itemId, distance) => {
+    console.log("hi");
     setCartItems(prev =>
       prev.map(item =>
         item.id === itemId ? { ...item, distance } : item
