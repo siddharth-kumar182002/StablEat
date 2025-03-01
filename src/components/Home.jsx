@@ -17,6 +17,7 @@ export const Home = () => {
       price: 450, 
       description: 'Classic pepperoni with mozzarella',
       restaurant: 'Pizza Palace',
+      rating:4,
       preparationTime: 20,
       deliveryWindow: 7,
       foodImage:Pizza
@@ -27,6 +28,7 @@ export const Home = () => {
       price: 150, 
       description: 'Dosa stuffed with smashed masala',
       restaurant: 'Dosa khalo',
+      rating:4.5,
       preparationTime: 15,
       deliveryWindow: 10,
       foodImage:Dosa
@@ -37,6 +39,7 @@ export const Home = () => {
         price: 240, 
         description: 'Paneer with indian gravy',
         restaurant: 'Punjabi dhaba',
+        rating:3.5,
         preparationTime: 30,
         deliveryWindow: 5,
         foodImage:Paneer
@@ -47,6 +50,7 @@ export const Home = () => {
         price: 50, 
         description: 'Big tasty sweets',
         restaurant: 'Milk bar',
+        rating:4.5,
         preparationTime:0,
         deliveryWindow: 5,
         foodImage:GulabJamun
@@ -57,6 +61,7 @@ export const Home = () => {
         price: 300, 
         description: 'Classic indian Chicken',
         restaurant: 'Krawings',
+        rating:5,
         preparationTime: 30,
         deliveryWindow: 11,
         foodImage:ChickenCurry
@@ -67,6 +72,7 @@ export const Home = () => {
         price: 120, 
         description: 'Egg filled in masala curry',
         restaurant: 'White rabbit',
+        rating:4.8,
         preparationTime: 8,
         deliveryWindow: 8,
         foodImage:EggCurry

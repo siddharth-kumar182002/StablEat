@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
-
+import { useCart } from '../context/CartContext';
 export const Sidebar = ({ isOpen, setIsOpen, isDarkMode, toggleDarkMode }) => {
+    const { cartItems } = useCart();
   return (
     <div className={`fixed top-0 left-0 h-full bg-gray-100 dark:bg-gray-800 p-4 w-64 transform transition-transform duration-300 ${
       isOpen ? 'translate-x-0' : '-translate-x-full'
@@ -28,7 +29,12 @@ export const Sidebar = ({ isOpen, setIsOpen, isDarkMode, toggleDarkMode }) => {
               }`
             }
           >
-            {item.name}
+               {item.name}
+            {item.name === 'Orders' && cartItems.length > 0 && (
+              <span className="absolute right-41 top-45  bg-red-500 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
+                {cartItems.length}
+              </span>
+            )}
           </NavLink>
         ))}
       </nav>
