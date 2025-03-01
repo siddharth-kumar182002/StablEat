@@ -6,6 +6,7 @@ export const RecentOrders = () => {
     { restaurant: 'Dominos', distance: '2.5 km', status: 'Delivered' },
     { restaurant: 'Kaveri', distance: '1.8 km', status: 'In Progress' },
     { restaurant: 'McDonalds', distance: '3.2 km', status: 'Delivered' },
+    { restaurant: 'Food Point', distance: '4.2 km', status: 'Canceled' },
   ];
 
   const visibleOrders = isExpanded ? orders : orders.slice(0, 2);
@@ -37,6 +38,8 @@ export const RecentOrders = () => {
             <span className={`px-3 py-1 rounded-full text-sm ${
               order.status === 'Delivered' 
                 ? 'bg-green-100 dark:bg-green-800/30 text-green-800 dark:text-green-400' 
+                : order.status === 'Canceled'
+                ? 'bg-red-100 dark:bg-yellow-800/30 text-yellow-800 dark:text-yellow-400'
                 : 'bg-yellow-100 dark:bg-yellow-800/30 text-yellow-800 dark:text-yellow-400'
             }`}>
               {order.status}
