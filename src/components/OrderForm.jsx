@@ -16,59 +16,60 @@ export const OrderForm = () => {
         <>
           <div className="mb-6">
             <h3 className="font-semibold mb-2 dark:text-gray-200">Selected Items:</h3>
-            {cartItems.map((item) => (
-              <div key={item.id} className="mb-4 pb-2 border-b dark:border-gray-700">
-                <div className="flex justify-between items-center mb-2">
-                  <div className="flex-1">
-                    <p className="font-medium dark:text-gray-200">{item.name}</p>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">{item.restaurant}</p>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <div className="flex items-center gap-2">
-                      <button
-                        onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                        className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded hover:bg-gray-300 dark:hover:bg-gray-600"
-                      >
-                        -
-                      </button>
-                      <span className="dark:text-gray-200">{item.quantity}</span>
-                      <button
-                        onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                        className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded hover:bg-gray-300 dark:hover:bg-gray-600"
-                      >
-                        +
-                      </button>
+            <div className="overflow-y-auto pr-2 max-h-[360px]">
+              {cartItems.map((item) => (
+                <div key={item.id} className="mb-4 pb-2 border-b dark:border-gray-700">
+                  <div className="flex justify-between items-center mb-2">
+                    <div className="flex-1">
+                      <p className="font-medium dark:text-gray-200">{item.name}</p>
+                      <p className="text-sm text-gray-500 dark:text-gray-400">{item.restaurant}</p>
                     </div>
-                    <span className="w-20 text-right dark:text-gray-200">
-                      ₹{(item.price * item.quantity).toFixed(2)}
-                    </span>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4 mt-2">
-                  <div className="flex items-center gap-2">
-                    <div className="w-24">
-                      <label className="text-sm text-gray-600 dark:text-gray-400">Distance (km)</label>
-                      <input
-                        type="number"
-                        value={item.distance}
-                        onChange={(e) => updateDistance(item.id, e.target.value)}
-                        className="p-2 border rounded w-full dark:bg-gray-700 dark:border-gray-600 dark:text-white"
-                        min="0"
-                        step="0.1"
-                        placeholder="0"
-                      />
-                    </div>
-                    {item.distance && (
-                      <div className="text-sm text-gray-600 dark:text-gray-400">
-                        <span>₹{(item.distance * 2).toFixed(2)}</span>
+                    <div className="flex items-center gap-4">
+                      <div className="flex items-center gap-2">
+                        <button
+                          onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                          className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded hover:bg-gray-300 dark:hover:bg-gray-600"
+                        >
+                          -
+                        </button>
+                        <span className="dark:text-gray-200">{item.quantity}</span>
+                        <button
+                          onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                          className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded hover:bg-gray-300 dark:hover:bg-gray-600"
+                        >
+                          +
+                        </button>
                       </div>
-                    )}
+                      <span className="w-20 text-right dark:text-gray-200">
+                        ₹{(item.price * item.quantity).toFixed(2)}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-4 mt-2">
+                    <div className="flex items-center gap-2">
+                      <div className="w-24">
+                        <label className="text-sm text-gray-600 dark:text-gray-400">Distance (km)</label>
+                        <input
+                          type="number"
+                          value={item.distance}
+                          onChange={(e) => updateDistance(item.id, e.target.value)}
+                          className="p-2 border rounded w-full dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                          min="0"
+                          step="0.1"
+                          placeholder="0"
+                        />
+                      </div>
+                      {item.distance && (
+                        <div className="text-sm text-gray-600 dark:text-gray-400">
+                          <span>₹{(item.distance * 2).toFixed(2)}</span>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-            
-            {/* Order Summary */}
+              ))}
+            </div>
+
             <div className="mt-6 pt-4 border-t dark:border-gray-700">
               <div className="space-y-2">
                 <div className="flex justify-between dark:text-gray-300">
