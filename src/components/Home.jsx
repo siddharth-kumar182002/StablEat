@@ -1,14 +1,30 @@
 import { FoodCard } from './FoodCard';
 import foodImage from '../assets/image.png';
+import { useCart } from '../context/CartContext';
 
 export const Home = () => {
+  const { addToCart } = useCart();
+  
   const foodItems = [
-    { id: 1, name: 'Pepperoni Pizza', price: 14.99, description: 'Classic pepperoni with mozzarella' },
-    { id: 2, name: 'Cheese Burger', price: 12.50, description: 'Juicy beef patty with cheese' },
-    { id: 3, name: 'Sushi Platter', price: 18.99, description: 'Assorted sushi selection' },
-    { id: 4, name: 'Caesar Salad', price: 10.99, description: 'Fresh romaine lettuce' },
-    { id: 5, name: 'Chicken Pasta', price: 15.99, description: 'Creamy Alfredo pasta' },
-    { id: 6, name: 'Fruit Smoothie', price: 7.99, description: 'Mixed berry smoothie' },
+    { 
+      id: 1, 
+      name: 'Pepperoni Pizza', 
+      price: 14.99, 
+      description: 'Classic pepperoni with mozzarella',
+      restaurant: 'Pizza Palace',
+      preparationTime: 20,
+      deliveryWindow: 7
+    },
+    { 
+      id: 2,
+      name: 'Cheese Burger', 
+      price: 12.50, 
+      description: 'Juicy beef patty with cheese',
+      restaurant: 'Burger Joint',
+      preparationTime: 15,
+      deliveryWindow: 7
+    },
+    // Add other items with similar structure
   ];
 
   return (
@@ -18,10 +34,9 @@ export const Home = () => {
         {foodItems.map((item) => (
           <FoodCard
             key={item.id}
-            name={item.name}
-            price={item.price}
-            description={item.description}
+            item={item}
             image={foodImage}
+            onAddToCart={() => addToCart(item)}
           />
         ))}
       </div>
