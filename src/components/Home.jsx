@@ -1,5 +1,10 @@
 import { FoodCard } from './FoodCard';
-import foodImage from '../assets/image.png';
+import Pizza from '../assets/pizza.png';
+import Dosa from '../assets/dosa.png';
+import Paneer from '../assets/paneer.png'
+import GulabJamun from '../assets/GulabJamun.png'
+import ChickenCurry from '../assets/ChickenCurry.png'
+import EggCurry from '../assets/EggCurry.png'
 import { useCart } from '../context/CartContext';
 
 export const Home = () => {
@@ -9,21 +14,63 @@ export const Home = () => {
     { 
       id: 1, 
       name: 'Pepperoni Pizza', 
-      price: 14.99, 
+      price: 450, 
       description: 'Classic pepperoni with mozzarella',
       restaurant: 'Pizza Palace',
       preparationTime: 20,
-      deliveryWindow: 7
+      deliveryWindow: 7,
+      foodImage:Pizza
     },
     { 
       id: 2,
-      name: 'Cheese Burger', 
-      price: 12.50, 
-      description: 'Juicy beef patty with cheese',
-      restaurant: 'Burger Joint',
+      name: 'Masala dosa', 
+      price: 150, 
+      description: 'Dosa stuffed with smashed masala',
+      restaurant: 'Dosa khalo',
       preparationTime: 15,
-      deliveryWindow: 7
+      deliveryWindow: 10,
+      foodImage:Dosa
     },
+    { 
+        id: 3, 
+        name: 'Paneer Masala', 
+        price: 240, 
+        description: 'Paneer with indian gravy',
+        restaurant: 'Punjabi dhaba',
+        preparationTime: 30,
+        deliveryWindow: 5,
+        foodImage:Paneer
+      },
+      { 
+        id: 4,
+        name: 'Gulab Jamun', 
+        price: 50, 
+        description: 'Big tasty sweets',
+        restaurant: 'Milk bar',
+        preparationTime:0,
+        deliveryWindow: 5,
+        foodImage:GulabJamun
+      },
+      { 
+        id: 5, 
+        name: 'Chicken Curry', 
+        price: 300, 
+        description: 'Classic indian Chicken',
+        restaurant: 'Krawings',
+        preparationTime: 30,
+        deliveryWindow: 11,
+        foodImage:ChickenCurry
+      },
+      { 
+        id: 6,
+        name: 'Egg Curry', 
+        price: 120, 
+        description: 'Egg filled in masala curry',
+        restaurant: 'White rabbit',
+        preparationTime: 8,
+        deliveryWindow: 8,
+        foodImage:EggCurry
+      },
     // Add other items with similar structure
   ];
 
@@ -35,7 +82,7 @@ export const Home = () => {
           <FoodCard
             key={item.id}
             item={item}
-            image={foodImage}
+            image={item.foodImage}
             onAddToCart={() => addToCart(item)}
           />
         ))}

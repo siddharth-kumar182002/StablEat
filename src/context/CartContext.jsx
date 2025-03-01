@@ -13,7 +13,7 @@ export const CartProvider = ({ children }) => {
           i.id === item.id ? { ...i, quantity: i.quantity + 1 } : i
         );
       }
-      return [...prev, { ...item, quantity: 1 }];
+      return [...prev, { ...item, quantity: 1, distance: '' }];
     });
   };
 
@@ -32,8 +32,21 @@ export const CartProvider = ({ children }) => {
     );
   };
 
+  const updateDistance = (itemId, distance) => {
+    setCartItems(prev =>
+      prev.map(item =>
+        item.id === itemId ? { ...item, distance } : item
+      )
+    );
+  };
+
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, updateQuantity }}>
+    <CartContext.Provider value={{ 
+      cartItems, 
+      addToCart, 
+      updateQuantity,
+      updateDistance
+    }}>
       {children}
     </CartContext.Provider>
   );

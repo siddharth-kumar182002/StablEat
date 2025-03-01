@@ -19,7 +19,7 @@ export const FoodCard = ({ item, image }) => {
           <p>Prep Time: {item.preparationTime} min</p>
         </div>
         <div className="flex justify-between items-center">
-          <span className="text-lg font-bold text-blue-600">${item.price}</span>
+          <span className="text-lg font-bold text-blue-600">₹{item.price}</span>
           {cartItem ? (
             <div className="flex items-center gap-2">
               <button

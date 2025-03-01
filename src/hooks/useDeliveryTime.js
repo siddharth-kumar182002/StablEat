@@ -1,14 +1,26 @@
 export const useDeliveryTime = () => {
-    const calculateTimes = (distance, cartItems) => {
-      const preparationTime = Math.max(...cartItems.map(item => item.preparationTime));
-      const transitTime = distance * 10;
-      const deliveryWindow = cartItems[0]?.deliveryWindow || 7;
-      
+    const calculateTimes = (cartItems) => {
+      let maxTotalTime = 0;
+      const itemsWithTimes = cartItems.map(item => {
+        const transitTime = (item.distance || 0) * 10;
+        const totalTime = item.preparationTime + transitTime + item.deliveryWindow;
+        
+        if (totalTime > maxTotalTime) {
+          maxTotalTime = totalTime;
+        }
+        
+        return {
+          ...item,
+          transitTime,
+          totalTime
+        };
+      });
+  
       return {
-        preparation: preparationTime,
-        transit: transitTime,
-        deliveryWindow,
-        total: preparationTime + transitTime + deliveryWindow
+        itemsWithTimes,
+        maxTotalTime,
+        preparationTime: Math.max(...cartItems.map(item => item.preparationTime)),
+        deliveryWindow: cartItems[0]?.deliveryWindow || 7
       };
     };
   
