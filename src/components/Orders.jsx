@@ -12,7 +12,7 @@ export const Orders = () => {
       {/* Reward Points Card */}
       <div className="mb-8 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
         <h2 className="text-xl font-bold mb-2 dark:text-white">My Reward Points</h2>
-        <p className="text-2xl text-blue-600 dark:text-blue-400">1250 pts</p>
+        <p className="text-2xl text-blue-600 dark:text-blue-400">200 pts</p>
       </div>
 
       {/* Main Content Area */}

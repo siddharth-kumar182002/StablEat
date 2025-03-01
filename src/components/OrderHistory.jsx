@@ -1,19 +1,19 @@
 export const OrderHistory = () => {
     const pastOrders = [
       {
-        restaurant: 'Pizza Palace',
+        restaurant: 'Pizza Hut',
         items: ['Large Pepperoni'],
         total: 18.99,
         date: '2023-08-15'
       },
       {
-        restaurant: 'Burger Joint',
+        restaurant: 'Burger King',
         items: ['Double Cheeseburger'],
         total: 12.50,
         date: '2023-08-14'
       },
       {
-        restaurant: 'Smoothie Bar', 
+        restaurant: 'Smoothy Foody', 
         items: ['Mixed Berry Smoothie'],
         total: 7.25,
         date: '2023-08-13'
