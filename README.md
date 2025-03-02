@@ -4,6 +4,10 @@ A modern food delivery tracking system with order management, dark mode, and rea
 
 ![stablEat preview](https://github.com/user-attachments/assets/a54bc9e3-0987-4c39-8de8-13aceee84103)
 
+## Deployment
+Deployed at Netlify
+https://stableat.netlify.app/
+
 ## Features
 
 ### Core Functionality
@@ -33,7 +37,6 @@ A modern food delivery tracking system with order management, dark mode, and rea
   - Custom Hooks
 - **Routing**: React Router 6
 - **Build Tool**: Vite
-- **Testing**: Jest + React Testing Library (optional)
 
 ## Getting Started
 
