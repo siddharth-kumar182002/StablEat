@@ -7,7 +7,7 @@ export const Sidebar = ({ isOpen, setIsOpen, isDarkMode, toggleDarkMode }) => {
       isOpen ? 'translate-x-0' : '-translate-x-full'
     } md:translate-x-0 z-40`}>
       <div className="mb-8">
-        <h1 className="text-2xl font-bold dark:text-white">StablEat</h1>
+        <h1 className="text-2xl mt-10 font-bold dark:text-white">StablEat</h1>
       </div>
 
       <nav className="space-y-2">
@@ -31,7 +31,7 @@ export const Sidebar = ({ isOpen, setIsOpen, isDarkMode, toggleDarkMode }) => {
           >
                {item.name}
             {item.name === 'Orders' && cartItems.length > 0 && (
-              <span className="absolute right-41 top-45  bg-red-500 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
+              <span className="absolute right-41 top-55  bg-red-500 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
                 {cartItems.length}
               </span>
             )}

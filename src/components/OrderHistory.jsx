@@ -4,19 +4,19 @@ export const OrderHistory = () => {
         restaurant: 'Pizza Hut',
         items: ['Large Pepperoni'],
         total: 18.99,
-        date: '2023-08-15'
+        date: '2025-03-15'
       },
       {
         restaurant: 'Burger King',
         items: ['Double Cheeseburger'],
         total: 12.50,
-        date: '2023-08-14'
+        date: '2025-02-14'
       },
       {
         restaurant: 'Smoothy Foody', 
         items: ['Mixed Berry Smoothie'],
         total: 7.25,
-        date: '2023-08-13'
+        date: '2025-01-13'
       }
     ];
   

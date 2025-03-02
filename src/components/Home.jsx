@@ -17,7 +17,7 @@ export const Home = () => {
       price: 450, 
       description: 'Classic pepperoni with mozzarella',
       restaurant: 'Pizza Palace',
-      rating:4,
+      rating:4.0,
       preparationTime: 20,
       deliveryWindow: 7,
       foodImage:Pizza
@@ -61,7 +61,7 @@ export const Home = () => {
         price: 300, 
         description: 'Classic indian Chicken',
         restaurant: 'Krawings',
-        rating:5,
+        rating:5.0,
         preparationTime: 30,
         deliveryWindow: 11,
         foodImage:ChickenCurry
